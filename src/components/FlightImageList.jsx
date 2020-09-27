@@ -4,11 +4,13 @@ import "./FlightImageList.scss";
 
 const FlightImageList = () => {
   const imageUrl = require.context("../assets", true);
-  const [{ currencySign, flightList }] = useContext(AppContext);
+  const [{ currencyPostSign, currencyPreSign, flightList }] = useContext(
+    AppContext
+  );
   // let img = images('./' + props.imageName);
   // <img src={img} alt="" />
   return (
-    <ul className='FlightImageList'>
+    <ul className='FlightImageList content'>
       {flightList.map((flight) => (
         <li key={flight.from + flight.to}>
           <a
@@ -19,16 +21,19 @@ const FlightImageList = () => {
               )})`,
             }}
           >
-            <span className='access'>Fly from</span>
-            {" " + flight.from}
-            <span className='access'>to</span>
-            {" " + flight.to}
-            <span className='price'>
-              {" "}
-              From
-              <span>
-                {" " + flight.price}
-                {currencySign}
+            <span className='text-wrap'>
+              <span className='access'>Fly from</span>
+              <span className='from'> {flight.from}</span>
+              <span className='access'>to</span>
+              <span className='to'> {flight.to}</span>
+              <span className='price'>
+                <span className='pre'> From</span>
+                <span>
+                  {" "}
+                  {currencyPreSign}
+                  {flight.price}
+                  {currencyPostSign}
+                </span>
               </span>
             </span>
           </a>

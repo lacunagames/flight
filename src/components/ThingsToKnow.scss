@@ -1,3 +1,100 @@
+@import "../styles/variables";
+
 .ThingsToKnow {
-  background: red;
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+  .WorldMapCircle {
+    max-width: 335px;
+    width: 100%;
+  }
+  p {
+    font: $fontMed;
+    margin-bottom: 30px;
+  }
+  .cap-first:first-letter {
+    text-transform: capitalize;
+  }
+  .wrap {
+    padding: 0 10px 20px;
+    margin-bottom: 30px;
+
+    div {
+      margin-bottom: 30px;
+    }
+  }
+  h3 {
+    font: $fontMed;
+    font-size: 18px;
+  }
+  .card {
+    border-radius: $radius;
+    box-shadow: $shadowShort;
+    padding: 25px;
+    margin-bottom: 30px;
+    text-align: left;
+    position: relative;
+
+    &:before {
+      content: "";
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      width: 35px;
+      height: 35px;
+      background: url(../assets/globe-blue.svg) no-repeat center;
+      background-size: 35px 35px;
+    }
+
+    p {
+      margin-bottom: 15px;
+    }
+  }
+  @include media(m) {
+    text-align: left;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    .wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 60px;
+      div {
+        padding: 0 20px;
+        width: 50%;
+      }
+    }
+    p {
+      font-size: 16px;
+    }
+    .WorldMapCircle {
+      margin: 0 auto;
+    }
+  }
+  @include media(l) {
+    padding-top: 90px;
+    padding-bottom: 90px;
+    .wrap {
+      padding: 0;
+      div {
+        width: 50%;
+        padding: 0;
+      }
+    }
+    .WorldMapCircle {
+      max-width: 450px;
+      margin-right: 0;
+    }
+    .cards {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: 1fr 1fr;
+
+      .card {
+        margin-bottom: 0;
+        padding: 40px;
+      }
+    }
+  }
 }

@@ -13,11 +13,12 @@ const places = [
   {
     location: "australia",
     locationTitle: "Australia",
-    currencySign: "$",
+    currencyPostSign: "$",
+    mapCircle: { x: 850, y: 520, range: 120 },
     flightList: [
-      { from: "Sydney", to: "Melbourne", price: 125 },
-      { from: "Sydney", to: "Brisbane", price: 50 },
-      { from: "Sydney", to: "Perth", price: 200 },
+      { from: "Sydney", to: "Melbourne", toCode: "MLB", price: 125 },
+      { from: "Sydney", to: "Brisbane", toCode: "BRS", price: 50 },
+      { from: "Sydney", to: "Perth", toCode: "PRT", price: 200 },
       { from: "Sydney", to: "Armidale", price: 300 },
       { from: "Sydney", to: "Narrandera", price: 125 },
       { from: "Sydney", to: "Meekathara", price: 100 },
@@ -26,12 +27,13 @@ const places = [
   {
     location: "uk",
     locationTitle: "the United Kingdom",
-    currencySign: "£",
+    currencyPreSign: "£",
+    mapCircle: { x: 450, y: 280, range: 60 },
     flightList: [
-      { from: "London", to: "Glasgow", price: 125 },
-      { from: "London", to: "Belfast", price: 150 },
-      { from: "London", to: "Edinburgh", price: 100 },
-      { from: "London", to: "Manchester", price: 70 },
+      { from: "London", to: "Glasgow", toCode: "GLS", price: 125 },
+      { from: "London", to: "Belfast", toCode: "BLF", price: 150 },
+      { from: "London", to: "Edinburgh", toCode: "EDN", price: 100 },
+      { from: "London", to: "Manchester", toCode: "MNC", price: 70 },
     ],
   },
 ];
@@ -44,8 +46,8 @@ const App = () => {
       : setState(places[0]);
   };
   return (
-    <AppContext.Provider value={[state, toggleState]}>
-      <div className='App'>
+    <div className='App'>
+      <AppContext.Provider value={[state, toggleState]}>
         <AppHeader />
         <Hero />
         <FlightImageList />
@@ -53,8 +55,8 @@ const App = () => {
         <Destinations />
         <ThingsToKnow />
         <AppFooter />
-      </div>
-    </AppContext.Provider>
+      </AppContext.Provider>
+    </div>
   );
 };
 

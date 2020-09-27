@@ -1,3 +1,56 @@
+@import "../styles/variables";
+
 .Hero {
-  background: red;
+  background: #f0f3f7;
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+  .WorldMapCircle {
+    max-width: 335px;
+    width: 100%;
+  }
+
+  h1 {
+    color: $cPurple;
+  }
+
+  p {
+    font: $fontMed;
+  }
+  .wrap {
+    padding: 0 10px;
+  }
+  @include media(m) {
+    text-align: left;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .wrap {
+      padding: 0 20px;
+      width: 50%;
+    }
+    p {
+      font-size: 16px;
+    }
+    .WorldMapCircle {
+      margin: 0 auto;
+    }
+  }
+  @include media(l) {
+    padding-top: 90px;
+    padding-bottom: 90px;
+    .wrap {
+      padding: 0;
+      width: 40%;
+    }
+    .WorldMapCircle {
+      max-width: 455px;
+      margin-right: 0;
+    }
+  }
 }

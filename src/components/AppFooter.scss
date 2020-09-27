@@ -1,3 +1,163 @@
+@import "../styles/variables";
+
 .AppFooter {
-  background: red;
+  padding-top: 10px;
+  overflow: hidden;
+  .wrap {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: "col1 col1" "col2 col3" "col4 col5";
+
+    div {
+      margin-bottom: 30px;
+    }
+    div:nth-child(2) {
+      grid-area: col2;
+    }
+    div:nth-child(3) {
+      grid-area: col3;
+    }
+    div:nth-child(4) {
+      grid-area: col4;
+    }
+  }
+  .badge {
+    grid-area: col5;
+    border-left: 2px solid $cGrayHover;
+    width: 220px;
+    padding: 0 60px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    left: -30%;
+  }
+  h3 {
+    font-size: 20px;
+    color: $cText;
+  }
+  li {
+    margin-bottom: 10px;
+  }
+  a {
+    display: inline-block;
+    border-radius: 4px;
+    transition: background-color $animFast;
+    text-decoration: none;
+    color: $cText;
+    padding: 5px;
+    margin: -5px;
+    &:hover,
+    &:focus {
+      background-color: $cGrayHover;
+    }
+  }
+  .side {
+    font: $fontBold;
+    font-size: 10px;
+  }
+  .bottom {
+    text-align: center;
+    font: $fontReg;
+    font-size: 16px;
+    padding: 20px;
+
+    strong {
+      font: $fontBold;
+      font-size: 16px;
+    }
+
+    a {
+      position: relative;
+      padding: 10px 10px 10px 40px;
+      :before {
+        content: "";
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        background: url(../assets/globe.svg) no-repeat center;
+        background-size: 30px 30px;
+        left: 7px;
+        top: 6px;
+      }
+    }
+  }
+  .social-section {
+    grid-area: col1;
+    .logo {
+      display: inline-block;
+      padding: 15px;
+      margin: -15px -15px 10px;
+      h2 {
+        margin-bottom: 0;
+      }
+    }
+    ul {
+      line-height: 1px;
+      display: inline-flex;
+      padding: 10px 0;
+      margin-bottom: 20px;
+      border-top: 2px solid $cGrayBg;
+      border-bottom: 2px solid $cGrayBg;
+      li {
+        margin: 0;
+      }
+      a {
+        width: 25px;
+        height: 25px;
+        margin: 0;
+        padding: 0;
+        background: url(../assets/linkedin-logo.svg) no-repeat center;
+        background-size: 10px 10px;
+        &:hover,
+        &:focus {
+          background-color: $cGrayHover;
+        }
+      }
+      .twitter {
+        background-image: url(../assets/twitter.svg);
+      }
+      .insta {
+        background-image: url(../assets/instagram.svg);
+      }
+      .face {
+        background-image: url(../assets/facebook.svg);
+      }
+      .whatsapp {
+        background-image: url(../assets/whatsapp.svg);
+      }
+      .google {
+        background-image: url(../assets/google.svg);
+      }
+    }
+    h3 {
+      font: $fontMed;
+      font-size: 16px;
+      color: $cText;
+      margin-bottom: 0;
+    }
+    p {
+      margin-bottom: 20px;
+      font: $fontBold;
+      font-size: 20px;
+      color: $cText;
+    }
+  }
+  @include media(m) {
+    .wrap {
+      grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
+      grid-template-rows: auto;
+      grid-template-areas: "col1 col2 col3 col4 col5";
+      gap: 20px;
+    }
+    .badge {
+      position: static;
+      padding: 40px 20px;
+    }
+  }
+  @include media(l) {
+    .badge img {
+      width: 110px;
+    }
+  }
 }

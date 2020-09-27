@@ -1,3 +1,130 @@
+@import "../styles/variables";
+
 .FlightImageList {
-  background: red;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr;
+
+  li {
+    display: block;
+    height: 150px;
+  }
+  a {
+    display: block;
+    height: 100%;
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 480px auto;
+    border: 1px solid $cWhite;
+    border-radius: $radius;
+    box-shadow: $shadow;
+    transition: background-size $animFast;
+
+    &:before {
+      content: "";
+      position: absolute;
+      left: 10px;
+      top: 10px;
+      width: 30px;
+      height: 30px;
+      background: $cWhite url(../assets/plane.svg) no-repeat center;
+      background-size: 24px;
+      border-radius: 30px;
+    }
+
+    &:hover,
+    &:focus {
+      background-size: 550px auto;
+      .price:after {
+        opacity: 1;
+        transform: scaleX(1);
+      }
+    }
+  }
+  .text-wrap {
+    display: block;
+    padding: 15px;
+    background: $cWhite;
+    position: absolute;
+    bottom: -1px;
+    left: -1px;
+    right: -1px;
+    border-radius: 0 0 $radius $radius;
+    color: $cText;
+  }
+  .from {
+    font: $fontMed;
+    font-size: 16px;
+    color: $cBlue;
+    padding-right: 40px;
+    position: relative;
+
+    &:after {
+      content: "";
+      position: absolute;
+      right: 6px;
+      display: block;
+      width: 25px;
+      height: 25px;
+      background-image: url(../assets/arrow.png);
+      background-size: cover;
+      top: -2px;
+    }
+  }
+  .to {
+    font: $fontBold;
+    font-size: 16px;
+  }
+  .price {
+    float: right;
+    font: $fontBold;
+    color: $cBlue;
+    font-size: 16px;
+    padding-left: 15px;
+    position: relative;
+    &:after {
+      content: "";
+      position: absolute;
+      left: 15px;
+      right: 0;
+      bottom: -4px;
+      border-bottom: 3px solid $cBlue;
+      transform: scaleX(0);
+      transform-origin: left;
+      opacity: 0;
+      transition: all $animFast;
+    }
+  }
+  .pre {
+    font: $fontMed;
+    font-size: 14px;
+    color: $cText;
+  }
+
+  @include media(s) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @include media(m) {
+    padding-top: 90px;
+    padding-bottom: 90px;
+    li {
+      height: 190px;
+    }
+    .text-wrap {
+      padding: 20px;
+    }
+    .from,
+    .to,
+    .price {
+      font-size: 18px;
+    }
+  }
+  @include media(l) {
+    grid-template-columns: 1fr 1fr 1fr;
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
 }

@@ -1,3 +1,124 @@
+@import "../styles/variables";
+
 .AppHeader {
-  background: red;
+  background: $cWhite;
+  height: 70px;
+  padding: 15px 0;
+
+  .content {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .logo {
+    display: inline-block;
+    padding: 15px;
+    margin: -15px;
+    img {
+      width: 95px;
+    }
+  }
+
+  h2 {
+    margin: 0;
+  }
+
+  .burger {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    margin-right: -15px;
+    background-image: url(../assets/burger.svg);
+    background-size: 30px 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 4px;
+    transition: background-color $animFast;
+    &:hover,
+    &:focus {
+      background-color: $cGrayHover;
+    }
+  }
+  ul {
+    display: none;
+  }
+  @include media(m) {
+    height: 80px;
+    padding: 20px 0;
+    .logo img {
+      width: 105px;
+    }
+  }
+  @include media(l) {
+    height: 96px;
+    padding: 25px 0;
+    .logo img {
+      width: 140px;
+    }
+
+    ul {
+      padding-top: 10px;
+      display: flex;
+
+      a {
+        font: $fontReg;
+        padding: 10px 15px;
+        text-decoration: none;
+        color: $cText;
+        position: relative;
+
+        &:after {
+          content: "";
+          position: absolute;
+          left: 15px;
+          right: 15px;
+          bottom: 0px;
+          border-bottom: 3px solid $cBlue;
+          transform: scaleX(0);
+          transform-origin: left;
+          opacity: 0;
+          transition: all $animFast;
+        }
+
+        &:hover:after,
+        &:focus:after {
+          opacity: 1;
+          transform: scaleX(1);
+        }
+      }
+    }
+    .login {
+      margin-left: 200px;
+      font: $fontBold;
+      font-size: 14px;
+    }
+
+    .caret {
+      padding-right: 20px;
+      position: relative;
+      &:before {
+        content: "";
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMCAxMCI+CiAgPGRlZnM+CiAgICA8c3R5bGU+CiAgICAgIC5jbHMtMSB7CiAgICAgICAgZmlsbDogI2YwZjsKICAgICAgICBvcGFjaXR5OiAwOwogICAgICB9CgogICAgICAuY2xzLTIgewogICAgICAgIGZpbGw6ICM3MDcwNzA7CiAgICAgIH0KICAgIDwvc3R5bGU+CiAgPC9kZWZzPgogIDxnIGlkPSJDaGV2cm9uIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg4KSByb3RhdGUoOTApIj4KICAgIDxyZWN0IGlkPSJGcmFtZSIgY2xhc3M9ImNscy0xIiB3aWR0aD0iMTAiIGhlaWdodD0iNiIvPgogICAgPHBhdGggaWQ9IlNoYXBlIiBjbGFzcz0iY2xzLTIiIGQ9Ik0xMCwxQTEsMSwwLDAsMCw4LjI5My4yOTNMNSwzLjU4NiwxLjcwNy4yOTNBMSwxLDAsMSwwLC4yOTMsMS43MDdsNCw0YTEsMSwwLDAsMCwxLjQxNSwwbDQtNEExLDEsMCwwLDAsMTAsMVoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDIgOCkgcm90YXRlKC05MCkiLz4KICA8L2c+Cjwvc3ZnPgo=);
+        width: 11px;
+        height: 11px;
+        position: absolute;
+        right: 4px;
+        top: 14px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 11px auto;
+      }
+      &:after {
+        right: 4px;
+      }
+    }
+
+    .flag {
+      display: inline-block;
+      width: 20px;
+      height: 10px;
+      background: url(../assets/flag-gbp.png) no-repeat center;
+      background-size: 20px 10px;
+    }
+  }
 }

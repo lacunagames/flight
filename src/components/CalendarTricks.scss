@@ -1,3 +1,104 @@
+@import "../styles/variables";
+
 .CalendarTricks {
-  background: red;
+  position: relative;
+  padding-top: 40px;
+  padding-bottom: 230px;
+  margin-bottom: 60px;
+  overflow: hidden;
+
+  .wrap {
+    background: $cPurple;
+    padding: 15px 15px 140px 15px;
+    border-radius: $radius;
+    position: relative;
+
+    &:before {
+      content: "";
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      width: 20px;
+      height: 20px;
+      background: url(../assets/currency-point-map.svg) no-repeat center;
+      background-size: 20px 20px;
+    }
+  }
+
+  h2,
+  p {
+    color: $cWhite;
+  }
+
+  h3 {
+    position: absolute;
+    left: 10px;
+    top: -30px;
+    color: $cOrange;
+    text-transform: uppercase;
+    font: $fontBold;
+    font-size: 15px;
+  }
+
+  img {
+    position: absolute;
+    bottom: 0;
+    right: -145px;
+    width: 530px;
+    max-width: none;
+  }
+  @include media(m) {
+    padding-top: 90px;
+    margin-bottom: 90px;
+    .wrap {
+      padding: 80px 30px 30px;
+      margin: 0 60px;
+
+      &:before {
+        right: auto;
+        left: 30px;
+        top: 45px;
+        width: 35px;
+        height: 35px;
+        background-size: 35px 35px;
+      }
+    }
+    h2 {
+      padding-top: 30px;
+    }
+    p {
+      width: 50%;
+    }
+    img {
+      width: 600px;
+      top: 0px;
+      bottom: auto;
+    }
+  }
+  @include media(l) {
+    margin-bottom: 30px;
+    .wrap {
+      margin: 0;
+
+      &:after {
+        content: "";
+        position: absolute;
+        right: 120px;
+        top: 120px;
+        width: 70px;
+        height: 70px;
+        background: url(../assets/swing-tags.svg) no-repeat center;
+        background-size: 70px 70px;
+      }
+    }
+    p {
+      width: 33%;
+    }
+    img {
+      width: 700px;
+      right: 50%;
+      top: -30px;
+      margin-right: -450px;
+    }
+  }
 }

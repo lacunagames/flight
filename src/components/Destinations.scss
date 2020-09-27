@@ -1,3 +1,66 @@
+@import "../styles/variables";
+
 .Destinations {
-  background: red;
+  background: $cPurple;
+  padding: 45px 0;
+  text-align: center;
+  margin-bottom: 45px;
+
+  h2,
+  p {
+    color: $cWhite;
+  }
+  p {
+    margin-bottom: 60px;
+  }
+  li {
+    max-width: 300px;
+    margin: 0 auto 30px;
+  }
+
+  a {
+    position: relative;
+    overflow: hidden;
+    display: block;
+    text-align: left;
+    border-radius: 5px;
+    background-color: $cWhite;
+    font: $fontMed;
+    color: $cText;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 15px 15px 15px 70px;
+    transition: all $animFast;
+
+    &:before {
+      content: "";
+      display: block;
+      width: 55px;
+      height: 60px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      background: $cLightBlue url(../assets/plane.svg) no-repeat center;
+      background-size: 30px;
+      transition: background-color $animFast;
+    }
+    &:hover {
+      background-color: lighten($cOrange, 30%);
+      box-shadow: 1px 1px 14px darken($cPurple, 10%);
+      &:before {
+        background-color: $cOrange;
+      }
+    }
+  }
+  @include media(l) {
+    padding: 150px 0;
+    ul {
+      display: flex;
+      justify-content: space-between;
+      li {
+        width: 330px;
+        margin: 0;
+      }
+    }
+  }
 }

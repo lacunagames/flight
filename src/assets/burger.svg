@@ -1,0 +1,16 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="16.45mm" height="16.45mm" viewBox="0 0 46.63 46.63">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #4a5662;
+        stroke-miterlimit: 10;
+        stroke-width: 4px;
+      }
+    </style>
+  </defs>
+  <title>Artboard 2</title>
+  <line class="cls-1" x1="5.54" y1="9.84" x2="40.02" y2="9.63"/>
+  <line class="cls-1" x1="5.62" y1="22.72" x2="40.11" y2="22.5"/>
+  <line class="cls-1" x1="5.69" y1="35.59" x2="40.17" y2="35.37"/>
+</svg>

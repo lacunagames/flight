@@ -1,0 +1,11 @@
+<svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" width="112.89mm" height="112.89mm" viewBox="0 0 320 320">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #495662;
+      }
+    </style>
+  </defs>
+  <title>Artboard 1</title>
+  <path class="cls-1" d="M160,128v64h90.53A96,96,0,1,1,160,64a94.58,94.58,0,0,1,62.18,23.17l42-48.26A158.55,158.55,0,0,0,160,0C71.78,0,0,71.78,0,160S71.78,320,160,320s160-71.78,160-160V128Z"/>
+</svg>
